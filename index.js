@@ -41,6 +41,19 @@ because she is a(an) ${department} student.`);
 // “The number 64 is the power of 2 nearest to 50.”
 
 
+//Algorithm
+Supply a number to your program and loop through the powers of 2, up to that number. Something like for counter =0, counter <= num, counter++. 
+Then store 2 raised to the power of counter in a variable. That becomes the current power of 2. 
+
+👉🏻 If the current power of 2 is equal to the number you supplied (num), return num. 
+
+👉🏻Else If the current number becomes bigger than  num, find the power of 2 directly before the present one (that's the previous power of 2). Then find the difference between num and the two powers i.e current and previous (you may need to use 'Math.abs' value here to eliminate negatives). 
+
+Determine the smaller of the two differences and return the power of two associated with it. Also, If the differences are same, return the smaller power of two. 
+
+Log your answer to the console in the format stated. Make sure you test with varying numbers, to be sure it works.
+
+
 // SOLUTION
 const num = 50;
 let pwr;
