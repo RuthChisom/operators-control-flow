@@ -42,12 +42,32 @@ because she is a(an) ${department} student.`);
 
 
 // SOLUTION
-let num = 40;
-for(i=2; i<=num; i*=2){
-    console.log(`pwr =${i}`);
-    let difference = i - num;
-    console.log(`difference =${difference}`);
-    // let pwr = num ** 2;
-}
+const num = 50;
+let pwr;
 
-// console.log(`The number (${pwr}) is the power of 2 nearest to (${num}).`)
+for(i=1; i<=5000; i++){
+    pwr = 2 ** i;
+    // console.log(`pwr =${pwr}`);
+    if(pwr === num) {
+        console.log(`The number ${pwr} is the power of 2 nearest to ${num}.”`);
+        break;
+    }
+    else if(pwr > num){
+        let pwrSmall = 2 ** (i-1);
+        // console.log(`pwrSmall =${pwrSmall}`);
+        let differenceSmall = num - pwrSmall;
+        // console.log(`differenceSmall =${differenceSmall}`);
+        let differenceBig = pwr-num;
+        // console.log(`differenceBig =${differenceBig}`);
+        if(differenceBig === differenceSmall){
+            console.log(`The number ${pwrSmall} is the power of 2 nearest to ${num}.`);
+        }
+        else if(differenceBig < differenceSmall){
+            console.log(`The number ${pwr} is the power of 2 nearest to ${num}.`);
+        }
+        else {
+            console.log(`The number ${pwrSmall} is the power of 2 nearest to ${num}.`);
+        }
+        break;
+    }
+}
